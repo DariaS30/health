@@ -1,0 +1,655 @@
+@use './colors';
+@use './mixins';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    border: none;
+}
+
+.header{
+    @include mixins.flex(center, unset, 0, column);
+}
+
+.first-row{
+    @include mixins.flex(space-between, center, 0, row);
+    background: colors.$whiteEC;
+    padding: 22px 76px;
+    &__social{
+        @include mixins.flex(center, center, 24px, row);
+    }
+}
+
+.logo{
+    @include mixins.flex(center, center, 0, row);
+    &__txt{
+        @include mixins.Roboto(24px, 400, 32px);
+        color: colors.$black;
+    }
+}
+
+.menu{
+    @include mixins.flex(center, center, 0px, row);
+    &-item{
+        position: relative;
+        color: colors.$head-txt;
+        padding: 24px 12px;
+        &:hover{
+            .dropdown{
+                display: block;
+            }
+        }
+    }
+}
+
+.dropdown{
+    @include mixins.flex(center, unset, 0, column);
+    position: absolute;
+    display: none;
+    top: 0px;
+    left: 0;
+    &-item{
+        padding: 24px 0;
+        text-align: center;
+
+        &:not(:first-child){
+            padding: 24px 12px;
+            &:hover{
+                background: colors.$whiteEC;
+                text-decoration: underline;
+            }
+        }
+        background: colors.$whiteF8;
+    }
+    &:hover{
+        display: block;
+    }
+}
+
+.contacts{
+    @include mixins.flex(center, center, 30px, row);
+    a{
+        color: colors.$black;
+    }
+}
+
+.second-row{
+    @include mixins.flex(space-between, center, 0, row);
+    padding: 10px 88px;
+    background: colors.$whiteF8;
+
+    li:hover, a:hover{
+        text-decoration: underline;
+    }
+}
+
+.shape{
+    @include mixins.flex(center, unset, 0, row);
+    padding-left: 180px;
+}
+
+.text{
+    @include mixins.flex(unset, unset, 8px, column);
+    text-align: center;
+
+    h2{
+        @include mixins.Roboto(48px, 500, 56px);
+        color: colors.$dark-blue;
+        padding-top: 72px;
+    }
+    span{
+        @include mixins.Roboto(48px, 700, 56px);
+        color: colors.$dark-blue;
+        padding-top: 8px;
+    }
+    p{
+        @include mixins.Roboto(16px, 400, 24px);
+        color: colors.$main-text;
+    }
+}
+
+.standart-btn{
+    @include mixins.flex(center, center, 18px, row);
+    color: colors.$white;
+    padding-top: 8px;
+
+    button{
+        @include mixins.Roboto(16px, 400, 24px);
+        color: colors.$white;
+        border-radius: 32px;
+        padding: 16px 32px;
+    }
+    &-red{
+        background: colors.$red2A;
+    }
+    &-green{
+        background: colors.$health-green;
+    }
+}
+
+.steps{
+    @include mixins.flex(center, center, 16px, column);
+    padding-left: 65px;
+
+
+    h2{
+        @include mixins.Roboto(48px, 500, 56px);
+        color: colors.$head-txt;
+        padding-top: 80px;
+    }
+    span{
+        @include mixins.Roboto(24px, 400, 32px);
+        color: colors.$main-text;
+    }
+}
+
+.row{
+    @include mixins.flex(center, center, 0, row);
+    padding: 40px 75px 40px 155px;
+
+    &-item{ 
+        position: relative;
+        h3{
+            @include mixins.Roboto(20px, 700, 32px);
+            color: colors.$main-text;
+        }
+        span,p{
+            @include mixins.Roboto(16px, 400, 24px);
+            color: colors.$main-text;
+        }
+        p{
+            padding-top: 16px;
+            width: 80%; 
+        }
+        #upper-green{
+            @include mixins.Roboto(48px, 700, 56px);
+            color: colors.$health-green;
+            position: absolute;
+            left: -40px;
+            top: 0;
+        }
+    }
+
+}
+
+.jorney-btn{
+    @include mixins.Roboto(16px, 400, 24px);
+    border-radius: 24px;
+    border: 2px solid colors.$health-green;
+    color: colors.$health-green;
+    padding: 8px 32px;
+}
+
+.cards{
+    background-image: url('../IMG/big-preview\ 1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-width: 100%;
+    height: 70vh;
+    margin: 24px 0;
+
+    &__item{
+        background: colors.$white;
+        border-radius: 10px;
+        position: relative;
+        text-align: center;
+        width: 24em;
+        height: 27em;
+        
+        &-image{
+            border-radius: 15px;
+            padding-top: 10px;
+        }
+
+        h2{
+            @include mixins.Roboto(24px, 400, 32px);
+            color: colors.$main-text;
+            padding-top: 20px;
+        }
+    
+        span, p{
+            @include mixins.Roboto(16px, 400, 24px);
+            color: colors.$main-text;
+        }
+
+        p{
+            padding: 16px 32px 32px 32px;
+        }
+        
+    }
+    &__border{
+        background: colors.$health-green;
+        border-radius: 10px;
+        position: absolute;
+        height: 2%;
+        width: 100%;
+        z-index: 1;
+        bottom: 0;
+        left: 0;
+    }
+}
+   
+.succses{
+    @include mixins.flex(center, center, 128px, row);
+    padding: 0 75px;
+}
+
+.history{
+    @include mixins.flex(space-around, flex-start, 8px, column);
+    h2{
+        @include mixins.Roboto(48px, 400, 56px);
+        color: colors.$health-green;
+    }
+    span{
+        @include mixins.Roboto(24px, 400, 32px);
+        color: colors.$head-txt;
+        padding-bottom: 16px;
+    }
+    p{
+        @include mixins.Roboto(16px, 400, 24px);
+        color: colors.$head-txt;
+        width: 43em;
+    }
+}
+
+.woman{
+    border-radius: 10px;
+    border: 2px solid colors.$health-green;
+}
+
+.container{
+    @include mixins.flex(center, center, 32px, unset);
+    padding-top: 26px;
+    padding-bottom: 47px;
+}
+
+.packages{
+    @include mixins.flex(center, center, 16px, column);
+    background-color: colors.$light-green;
+    padding-top: 54px;
+    text-align: center;
+
+    h2{
+        @include mixins.Roboto(48px, 400, 36px);
+        color: colors.$head-txt;
+        padding-top: 16px;
+    }
+
+    p{
+        @include mixins.Roboto(24px, 400, 32px);
+        color: colors.$head-txt;
+    }
+}
+
+.block{
+    @include mixins.flex(center, center, 32px, row);
+    padding: 16px 68px 48px 94px;
+}
+
+.item{
+    @include mixins.flex(center, center, 16px, column);
+
+    h3{
+        @include mixins.Roboto(22px, 500, 24px);
+        color: colors.$head-txt;
+        padding-top: 8px;
+    }
+    p{
+        @include mixins.Roboto(16px, 400, 24px);
+        color: colors.$light-text;
+        text-align: center;
+    }
+}
+
+.reviews{
+    @include mixins.flex(space-around, center, 0px, unset);
+    flex-wrap: wrap;
+    max-width: 100%;
+    margin: 64px 75px;
+    border-top: 5px solid colors.$greenB9;
+    border-bottom: 5px solid colors.$greenB9;
+}
+
+.one{
+    @include mixins.flex(center, flex-start, 0, unset);
+    padding: 25px;
+    width: 40%;
+
+    &__img{
+        border-radius: 100px;
+    }
+}
+
+.about{
+    @include mixins.flex(center, flex-start, 8px, column);
+    padding-left: 37px;
+
+    p{
+        @include mixins.Roboto(16px, 400, 24px);
+        color: colors.$head-txt;
+        width: 17.5em;
+    }
+    span{
+        @include mixins.Roboto(18px, 500, 24px);
+        color: colors.$black;
+        padding-top: 8px;
+    }
+    b{
+        @include mixins.Roboto(16px, 400, 24px);
+        color: colors.$health-green;
+    }
+}
+
+.reviews-icons{
+    position: relative;
+}
+
+.prev-icon{
+    position: absolute;
+    top: 50%;
+    left: 6%;
+    transform: translate(-50%, -50%);
+}
+
+.next-icon{
+    position: absolute;
+    top: 50%;
+    right: 6%;
+    transform: translate(-50%, -50%);
+}
+
+.program{
+    @include mixins.flex(center, center, 0, unset);
+    box-sizing: border-box;
+    text-align: center;
+    margin: 56px;
+}
+
+colgroup:nth-child(1) {border: 1px solid colors.$blue}
+colgroup:nth-child(2) {border: 1px solid colors.$blue}
+colgroup:nth-child(3) {border: 2px solid colors.$red00}
+colgroup:nth-child(4) {border: 1px solid colors.$blue}
+
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+thead{
+    th{
+        border: 1px solid colors.$blue;
+        padding: 16px 60px;
+    }
+    h4{
+        @include mixins.Roboto(24px, 400, 32px);
+        color: colors.$head-txt;
+    }
+
+    span{
+        @include mixins.Roboto(16px, 400, 24px);
+        color: colors.$main-text;
+    }
+}
+
+.items{
+    td{
+        @include mixins.Roboto(16px, 400, 24px);
+        color: colors.$head-txt;
+        border: 1px solid colors.$blue;
+        padding: 10px 95px;
+    }
+
+    #text{
+        @include mixins.Roboto(24px, 400, 32px);
+        color: colors.$head-txt;
+        padding: 8px 40px;
+    }
+
+    #upper{
+        @include mixins.Roboto(58px, 300, 56px);
+    }
+}
+
+tfoot{
+    td{
+        padding: 30px 80px;
+        border: 1px solid colors.$blue;
+    }
+    .btn{
+        margin: 30px 80px;
+        a{
+            @include mixins.Roboto(16px, 400, 24px);
+            border: 2px solid colors.$health-green;
+            border-radius: 24px;
+            color: colors.$health-green;
+            padding: 8px 26px;
+        }
+    }
+}
+
+.question{
+    @include mixins.flex(center, center, 0, unset);
+    flex-wrap: wrap;
+    padding: 50px 75px;
+}
+
+.diet{
+    @include mixins.flex(center, flex-start, 0, row);
+    &__info{
+        @include mixins.flex(center, flex-start, 0, column);
+        padding: 20px 16px;
+        h2{
+            @include mixins.Roboto(24px, 400, 32px);
+            color: colors.$head-txt;
+            padding-bottom: 8px;
+        }
+        p{
+            @include mixins.Roboto(16px, 400, 24px);
+            color: colors.$light-text;
+            width: 32em;
+        }
+    }
+}
+
+.newsletters{
+    background-image: url('../IMG/depositphotos_202281534-stock-photo-mixed-fruits-white-background\ 1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-width: 100%;
+    height: 45em;
+}
+
+.proof{
+    @include mixins.flex(unset, center, 0, unset);
+    padding: 108px 699px 146px 179px;
+    .cards{
+        @include mixins.flex(unset, flex-start, 0, column);
+        height: 21em;
+
+        background: colors.$white;
+        border-radius: 10px;
+        padding: 59px 65px 21px 72px;
+    
+        &__title{
+            @include mixins.Roboto(24px, 400, 32px);
+            color: colors.$health-green;
+        }
+        &__let{
+            @include mixins.Roboto(16px, 400, 24px);
+            color: colors.$light-text;
+        }
+        &__improve{
+            @include mixins.Roboto(12px, 400, 18px);
+            color: colors.$head-txt;
+            padding-top: 31px;
+        }
+        &__dont-wait{
+            @include mixins.Roboto(12px, 500, 18px);
+            font-weight: bold;
+            color: colors.$head-txt;
+            padding-bottom: 30px;
+        }
+        input{
+            @include mixins.Roboto(16px, 400, 24px);
+            color: colors.$grey;
+            border-radius: 100px;
+            border: 1px solid colors.$light-grey;
+            background: colors.$whiteE9;
+            padding: 8px 152px 8px 16px;
+        }
+    }
+}
+
+.subscribe{
+    @include mixins.flex(center, flex-start, 23px, row);
+    padding-top: 16px;
+
+    .button{
+        @include mixins.Roboto(16px, 400, 24px);
+        background-color: colors.$health-green;
+        color: colors.$white;
+        border-radius: 25px;
+        padding: 8px 32px;
+    }
+}
+.share{
+    @include mixins.Roboto(9px, 400, 24px);
+    color: colors.$head-txt;
+    padding-top: 8px;
+}
+
+.coaches{
+    @include mixins.flex(center, center, 16px, column);
+    padding: 0 149px;
+    margin-top: 60px;
+
+    &__toch-with{
+        @include mixins.Roboto(24px, 400, 32px);
+        color: colors.$light-text;
+    }
+
+    &__title{
+        @include mixins.Roboto(48px, 500, 56px);
+        color: colors.$head-txt;
+    }
+    &__text{
+        @include mixins.Roboto(24px, 400, 32px);
+        color: colors.$light-text;
+        text-align: center;
+        width: 43em;
+        padding-bottom: 8px;
+    }
+}
+
+.members-block{
+    @include mixins.flex(center, center, 0, unset);
+    flex-wrap: wrap;
+}
+
+.member{
+    position: relative;
+    @include mixins.flex(center, flex-start, 20px, row);
+    padding: 0 30px 50px 0;
+    img{
+        border-radius: 100%
+    }
+    &-text{
+        @include mixins.flex(center, flex-start, 8px, column);
+        h2{
+            @include mixins.Roboto(18px, 500, 24px);
+            color: colors.$health-green;
+        }
+        span{
+            @include mixins.Roboto(12px, 700, 18px);
+            color: colors.$head-txt;
+        }
+        p{
+            @include mixins.Roboto(16px, 400, 24px);
+            color: colors.$light-text;
+            width: 19em;
+        }
+    }
+    .portaits{
+        @include mixins.flex(center, flex-end, 24px, row);
+        position: absolute;
+        top: 3px;
+        left: 318px;
+    }
+}
+
+.green-back{
+    background: colors.$health-green;
+    margin-top: 72px;
+}
+.click{
+    @include mixins.flex(center, center, 16px, row);
+    padding: 80px 0;
+
+    &__mt{
+        @include mixins.Roboto(24px, 700, 32px);
+        color: colors.$white;
+    }
+
+    &__bt{
+        @include mixins.Roboto(16px, 400, 24px);
+        border-radius: 24px;
+        border: 2px solid colors.$white;
+        background-color: colors.$health-green;
+        color: colors.$white;
+        padding: 8px 16px;
+    }
+}
+
+footer{
+    @include mixins.flex(space-around, center, 0px, row);
+    padding: 24px 280px;
+}
+
+.get-in{
+    @include mixins.flex(center, flex-start, 8px, column);
+    width: 17em;
+    &__steps{
+        @include mixins.Roboto(12px, 400, normal);
+        color: colors.$head-txt;
+    }
+    &__happy-life{
+        @include mixins.Roboto(12px, 400, 18px);
+        font-weight: bold;
+        color: colors.$black;
+        padding-top: 20px; 
+    }
+    &__energy{
+        @include mixins.Roboto(12px, 400, normal);
+        color: colors.$main-text;
+        padding-bottom: 8px;
+    }
+    &__get-now{
+        border-radius: 24px;
+        border: 2px solid colors.$health-green;
+        background: colors.$white;
+        color: colors.$health-green;
+        @include mixins.Roboto(16px, 400, 24px);
+        padding: 8px 16px;
+    }
+}
+
+.menu{
+    @include mixins.flex(center, center, 48px, row);
+
+    menu{
+        @include mixins.flex(center, flex-start, 0px, column);
+    }
+    &-title{
+        color: colors.$main-text;
+        @include mixins.Roboto(16px, 400, 24px);
+        padding-bottom: 20px;
+    }
+    &-item{
+        @include mixins.Roboto(16px, 400, 35px);
+        color: colors.$head-txt;
+        padding: 0%;
+    }
+}
