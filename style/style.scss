@@ -72,7 +72,8 @@
 .contacts{
     @include mixins.flex(center, center, 30px, row);
     a{
-        color: colors.$black;
+        @include mixins.Roboto(16px, 400, 24px);
+        color: colors.$head-txt;
     }
 }
 
@@ -102,12 +103,13 @@
     }
     span{
         @include mixins.Roboto(48px, 700, 56px);
-        color: colors.$dark-blue;
+        color: colors.$main-text;
         padding-top: 8px;
     }
     p{
         @include mixins.Roboto(16px, 400, 24px);
         color: colors.$main-text;
+        width: 30.5em;
     }
 }
 
@@ -187,8 +189,8 @@
     background-image: url('../IMG/big-preview\ 1.png');
     background-size: cover;
     background-repeat: no-repeat;
-    max-width: 100%;
-    height: 70vh;
+    min-width: 100%;
+    width: 100%;
     margin: 24px 0;
 
     &__item{
@@ -230,6 +232,15 @@
         bottom: 0;
         left: 0;
     }
+}
+
+.container{
+    width: 100%;
+    max-width: 76em;
+    @include mixins.flex(center, unset, 32px, row);
+    padding-top: 26px;
+    padding-bottom: 47px;
+    margin: 0 auto;
 }
    
 .succses{
