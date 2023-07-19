@@ -90,6 +90,7 @@
 .shape{
     @include mixins.flex(center, unset, 0, row);
     padding-left: 180px;
+    background: colors.$whiteF2;
 }
 
 .text{

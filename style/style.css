@@ -125,6 +125,7 @@
   gap: 0;
   flex-direction: row;
   padding-left: 180px;
+  background: #F1F3F2;
 }
 
 .text {
